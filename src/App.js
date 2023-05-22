@@ -1,5 +1,7 @@
 import Pokedex from './Pokedex';
 
+
+
 function App() {
   let poke = [
     {id: 4,   name: 'Charmander', type: 'fire',     base_experience: 62},
