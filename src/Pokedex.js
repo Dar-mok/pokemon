@@ -1,13 +1,32 @@
 import Pokecard from './Pokecard';
 
-function Pokedex(props){
+const DEFAULT_POKE_LIST = [
+  {id: 4,   name: 'Charmander', type: 'fire',     base_experience: 62},
+  {id: 7,   name: 'Squirtle',   type: 'water',    base_experience: 63},
+  {id: 11,  name: 'Metapod',    type: 'bug',      base_experience: 72},
+  {id: 12,  name: 'Butterfree', type: 'flying',   base_experience: 178},
+  {id: 25,  name: 'Pikachu',    type: 'electric', base_experience: 112},
+  {id: 39,  name: 'Jigglypuff', type: 'normal',   base_experience: 95},
+  {id: 94,  name: 'Gengar',     type: 'poison',   base_experience: 225},
+  {id: 133, name: 'Eevee',      type: 'normal',   base_experience: 65}
+]
+
+function Pokedex({pokemon=DEFAULT_POKE_LIST}){
+
 //use map to loop through array of objects, inserting all the pertaining
 //properties to the Pokecard component
+const twoRows = {
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  alignItems: "center",
+  justifyContent:"center",
+}
 
 return (
- <div>
+ <div style={twoRows}>
 
- {props.pokemon.map(poke => <Pokecard poke={poke} /> )}
+ {pokemon.map(poke => <Pokecard poke={poke} /> )}
 
  </div>
 )
